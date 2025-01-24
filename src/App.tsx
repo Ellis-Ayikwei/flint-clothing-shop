@@ -7,8 +7,13 @@ import { WishlistProvider } from './context/WishlistContext';
 import { UserPreferencesProvider } from './context/UserPreferencesContext';
 import Footer from './components/Layouts/Footer';
 import { CurrencyProvider } from './context/CurrencyContext';
+import { ReactNode } from 'react';
 
-function App() {
+interface AppProps {
+    children?: ReactNode;
+}
+
+function App({ children }: AppProps) {
     const location = useLocation();
 
     return (
@@ -17,6 +22,7 @@ function App() {
                 <CartProvider>
                     <WishlistProvider>
                         <Header />
+                        {children}
                         <AnimatePresence mode="wait">
                             <Routes location={location} key={location.pathname}>
                                 {routes.map((route) => (
