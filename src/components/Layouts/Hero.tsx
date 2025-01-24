@@ -107,7 +107,7 @@ export default function Hero() {
                             <span className="text-3xl font-bold text-white">FLINT</span>
                         </motion.div>
                         <motion.span className="text-sm font-medium tracking-widest text-gray-400 uppercase" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                            FW 2024 Collection
+                            FW 2025 Collection
                         </motion.span>
                         <motion.h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}>
                             DEFINE <br />
