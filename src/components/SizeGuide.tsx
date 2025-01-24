@@ -46,7 +46,7 @@ const SizeGuide: React.FC<SizeGuideProps> = ({ isOpen, onClose, category }) => {
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         className="bg-[#141414] p-6 rounded-lg max-w-2xl w-full"
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
                     >
                         <h2 className="text-2xl font-bold mb-6">Size Guide - {category.charAt(0).toUpperCase() + category.slice(1)}</h2>
 

@@ -52,7 +52,7 @@ const ProductDetail = () => {
             setShowToast(true);
             return;
         }
-        addToCart({ ...product, selectedSize, selectedColor, quantity });
+        addToCart({ ...product, quantity, size: selectedSize, color: selectedColor, image: mainImage });
         setToastMessage('Added to cart successfully!');
         setShowToast(true);
     };
@@ -255,7 +255,7 @@ const ProductDetail = () => {
 
                         {/* Wishlist */}
                         <motion.button
-                            onClick={() => addToWishlist(product)}
+                            // onClick={() => addToWishlist(product)}
                             className={`w-full border py-3 rounded-full transition-colors flex items-center justify-center gap-2 ${
                                 isInWishlist(product.id) ? 'border-red-500 text-red-500 hover:bg-red-50' : 'border-gray-200 text-gray-900 hover:border-gray-900'
                             }`}

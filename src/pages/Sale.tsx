@@ -136,7 +136,7 @@ const Sale = () => {
 
                             {/* Wishlist Button */}
                             <button
-                                onClick={() => addItem(product)}
+                                // onClick={() => addItem(product)}
                                 className={`absolute top-4 right-4 p-2 rounded-full ${
                                     isInWishlist(product.id) ? 'bg-red-500 text-white' : 'bg-white text-gray-900 hover:bg-red-500 hover:text-white'
                                 } shadow-sm transition-all duration-300`}

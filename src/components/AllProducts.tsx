@@ -65,10 +65,15 @@ const AllProducts = () => {
     }, [filters, sortBy]);
 
     const toggleFilter = (type: keyof FilterOptions, value: string) => {
-        setFilters((prev) => ({
-            ...prev,
-            [type]: prev[type].includes(value) ? prev[type].filter((v) => v !== value) : [...prev[type], value],
-        }));
+        setFilters((prev) => {
+            if (type === 'priceRange') {
+                return prev; // Don't modify price range with this function
+            }
+            return {
+                ...prev,
+                [type]: prev[type].includes(value) ? prev[type].filter((v) => v !== value) : [...prev[type], value],
+            };
+        });
     };
 
     return (
@@ -201,7 +206,12 @@ const AllProducts = () => {
 
                             {/* Wishlist Button */}
                             <button
-                                onClick={() => addToWishlist(product)}
+                                onClick={() =>
+                                    addToWishlist({
+                                        ...product,
+                                        image: product.images[0],
+                                    })
+                                }
                                 className={`absolute top-4 right-4 p-2 rounded-full ${
                                     isInWishlist(product.id) ? 'bg-red-500 text-white' : 'bg-white text-gray-900 hover:bg-red-500 hover:text-white'
                                 } shadow-sm transition-all duration-300`}

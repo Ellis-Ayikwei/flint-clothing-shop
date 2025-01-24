@@ -80,7 +80,7 @@ const CollectionPage = () => {
 
                             {/* Wishlist Button */}
                             <button
-                                onClick={() => product && addItem(product)}
+                                // onClick={() => product && addItem(product)}
                                 className={`absolute top-4 right-4 p-2 rounded-full ${
                                     product && isInWishlist(product.id) ? 'bg-red-500 text-white' : 'bg-black/50 text-white hover:bg-red-500'
                                 } transition-colors`}

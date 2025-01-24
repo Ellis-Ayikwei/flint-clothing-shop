@@ -121,7 +121,7 @@ const Products = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [likedProducts, setLikedProducts] = useState<number[]>([]);
     const { formatPrice } = useCurrency();
-    const { addToCart } = useCart();
+    const { addItem } = useCart();
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -133,6 +133,10 @@ const Products = () => {
     const toggleLike = (productId: number) => {
         setLikedProducts((prev) => (prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]));
     };
+
+    function addToCart(product: Product): void {
+        throw new Error('Function not implemented.');
+    }
 
     return (
         <>

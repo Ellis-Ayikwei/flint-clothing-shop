@@ -82,10 +82,10 @@ const MenCategory = () => {
 
                                 {/* Wishlist Button */}
                                 <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        addToWishlist(product);
-                                    }}
+                                    // onClick={(e) => {
+                                    //     e.stopPropagation();
+                                    //     addToWishlist(product);
+                                    // }}
                                     className={`absolute top-4 right-4 p-2 rounded-full ${
                                         isInWishlist(product.id) ? 'bg-red-500 text-white' : 'bg-white text-gray-900 hover:bg-red-500 hover:text-white'
                                     } shadow-sm transition-all duration-300`}
